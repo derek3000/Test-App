@@ -1,12 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Sign up</title>
-</head>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>   
 <body bgcolor="#E6E6FA">
+<c:import url="/include/header.jsp"></c:import>
 Sign up
-</body>
-</html>
+
+<jsp:useBean id="user" class="org.studyeasy.beans.User" scope="session"></jsp:useBean>
+<form action="aboutMadeConfirm.jsp" method="post">
+First Name <input type="text" name="firstName"  required value='<jsp:getProperty property="firstName" name="user"/>'> <br/>
+Last Name <input type="text" name="firstName"  required value='<jsp:getProperty property="lastName" name="user"/>'> <br/>
+Email <input type="text" name="email"  required value='<jsp:getProperty property="email" name="user"/>'> <br/>
+Submit <input type="Submit" value="Submit">
+
+</form>
+<c:import url="/include/footer.jsp"></c:import>
